@@ -5,7 +5,7 @@ import 'package:assesment/presentation/screens/section3.dart';
 class UserTile extends StatelessWidget {
   final User user;
 
-  UserTile({required this.user});
+  const UserTile({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class UserTile extends StatelessWidget {
                   width: 100,
                 ),
               ),
-              title: Text('${user.name}'),
+              title: Text(user.name),
               subtitle: Text(user.phone),
               onTap: () {
                 Navigator.push(
