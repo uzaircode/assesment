@@ -1,16 +1,16 @@
-
 import 'package:flutter/material.dart';
-import 'Section2.dart';
+import 'package:assesment/presentation/screens/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Section1());
 }
 
-class MyApp extends StatelessWidget {
+class Section1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
           //Background image
           decoration: BoxDecoration(
@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
                                 style: TextStyle(
                                     color: Color.fromRGBO(142, 142, 147, 1.0),
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 22)),
+                                    fontSize: 22)
+                            ),
                           ],
                         )),
                   ),
@@ -101,10 +102,7 @@ class MyApp extends StatelessWidget {
                       backgroundColor: Color.fromRGBO(48, 176, 199, 1.0),
                     ),
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => Section2()),
-                      // );
+                      HomePage();
                     },
                     child: Text('LOGIN',
                         style: TextStyle(
@@ -121,5 +119,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Tab(icon: Image.asset("img/icon_user.png")),
