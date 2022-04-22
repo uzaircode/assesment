@@ -19,6 +19,9 @@ class UserDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Color(0x44000000),
+        elevation: 0,
         title: Text(user.name),
       ),
       body: Container(
@@ -28,6 +31,7 @@ class UserDetailsPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -111,8 +115,8 @@ class UserDetailsPage extends StatelessWidget {
               height: 12.0,
             ),
             Container(
+              //ejah sini
               child: Expanded(
-
                 child: Material(
                   shape: RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.grey, width: 1),
