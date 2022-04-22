@@ -20,9 +20,10 @@ class UserDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0x44000000),
+        backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(user.name),
+        foregroundColor: Colors.grey,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -31,53 +32,56 @@ class UserDetailsPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              height: 16.0,
+              height: 20.0,
             ),
             Center(
-              child:
-              Hero(
-                tag: user.id,
-                child: Image.network(
-                  user.image,
-                  height: 200,
-                  width: 200,
+              child: Container(
+                // Profile picture's border frame
+                color: Color.fromRGBO(229, 220, 234, 1.0),
+                height: 120,
+                width: 120,
+                padding: EdgeInsets.all(2),
+                child: Hero(
+                  tag: user.id,
+                  child: Image.network(
+                    user.image,
+                    height: 120,
+                    width: 120,
+                  ),
                 ),
               ),
             ),
             SizedBox(
-              height: 22.0,
-            ),
-            SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             Container(
               padding: EdgeInsets.all(10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
               decoration: BoxDecoration(
+                color: Colors.transparent,
                 border: Border.all(
-                  color: Colors.blueAccent,
+                  color: Color.fromRGBO(89, 179, 201, 1.0),
                   width: 2,
                 ),
-                color: Colors.white,
               ),
               child: Row(
                 children: <Widget>[
-                  // ImageIcon(
-                  //   AssetImage("img/icon_email.png"),
-                  // ),
-                  SizedBox(
-                    width: 20.0,
+                  ImageIcon(
+                    AssetImage("img/icon_call.png"),
+                    color: Color.fromRGBO(194, 194, 198, 1.0),
                   ),
-                  Text(
-                    user.phone,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15.0,
+                  Expanded(
+                    child: Text(
+                      user.phone,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromRGBO(85, 85, 85, 1.0)),
                     ),
                   ),
                 ],
@@ -87,36 +91,35 @@ class UserDetailsPage extends StatelessWidget {
               padding: EdgeInsets.all(10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
               decoration: BoxDecoration(
+                color: Colors.transparent,
                 border: Border.all(
-                  color: Colors.blueAccent,
+                  color: Color.fromRGBO(89, 179, 201, 1.0),
                   width: 2,
                 ),
-                color: Colors.white,
               ),
               child: Row(
                 children: <Widget>[
-                  // ImageIcon(
-                  //   AssetImage("img/icon_email.png"),
-                  // ),
-                  SizedBox(
-                    width: 20.0,
+                  ImageIcon(
+                    AssetImage("img/icon_email.png"),
+                    color: Color.fromRGBO(194, 194, 198, 1.0),
                   ),
-                  Text(
-                    user.email,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15.0,
+                  Expanded(
+                    child: Text(
+                      user.email,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromRGBO(85, 85, 85, 1.0),
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
-            SizedBox(
-              height: 12.0,
-            ),
-            Container(
-              //ejah sini
-              child: Expanded(
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 child: Material(
                   shape: RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.grey, width: 1),

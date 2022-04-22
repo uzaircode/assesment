@@ -12,6 +12,13 @@ class UserTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            left: BorderSide(width: 1.0, color: Colors.grey),
+            right: BorderSide(width: 1.0, color: Colors.grey),
+          ),
+          color: Colors.white,
+        ),
         child: Column(
           children: [
             ListTile(
@@ -23,8 +30,19 @@ class UserTile extends StatelessWidget {
                   width: 100,
                 ),
               ),
-              title: Text(user.name),
-              subtitle: Text(user.phone),
+              title: Text(
+                  user.name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  )
+              ),
+              subtitle: Text(
+                  user.phone,
+                  style: TextStyle(
+                    fontSize: 17,
+                  )
+              ),
               onTap: () {
                 Navigator.push(
                     context,
@@ -32,9 +50,13 @@ class UserTile extends StatelessWidget {
                         builder: (context) => UserDetailsPage(user: user)));
               },
             ),
-            Divider(
-              thickness: 2.0,
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0,),
+              child: Divider(
+                thickness: 2.0,
+              ),
             ),
+
           ],
         ),
       ),

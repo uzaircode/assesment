@@ -51,7 +51,7 @@ class _loginState extends State<login> {
                             SizedBox(
                               height: 40,
                             ),
-                            Text('Ingenious Assessment',
+                            Text('Inglab Assessment',
                                 style: TextStyle(
                                     color: Color.fromRGBO(142, 142, 147, 1.0),
                                     fontWeight: FontWeight.w500,
@@ -67,7 +67,7 @@ class _loginState extends State<login> {
                       child: TextField(
                         decoration: InputDecoration(
                           prefixIcon: ImageIcon(AssetImage("img/icon_user.png"),
-                              color: Color.fromRGBO(174, 174, 178, 1.0)),
+                          color: Color.fromRGBO(174, 174, 178, 1.0)),
                           border: OutlineInputBorder(),
                           labelText: 'Username',
                           labelStyle: TextStyle(

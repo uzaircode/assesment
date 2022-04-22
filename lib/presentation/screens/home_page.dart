@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +55,8 @@ class _HomePageState extends State<HomePage> {
   _searchBar() {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-      child: TextField(
+      child:
+      TextField(
         autofocus: false,
         onChanged: (searchText) {
           searchText = searchText.toLowerCase();
@@ -67,7 +69,6 @@ class _HomePageState extends State<HomePage> {
             }).toList();
           });
         },
-
         // controller: _textController,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
