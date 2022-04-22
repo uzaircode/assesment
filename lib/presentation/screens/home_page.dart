@@ -29,12 +29,17 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("img/background.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: ListView.builder(
             itemBuilder: (context, index) {
               if (!_isLoading) {
@@ -53,29 +58,41 @@ class _HomePageState extends State<HomePage> {
   }
 
   _searchBar() {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-      child:
-      TextField(
-        autofocus: false,
-        onChanged: (searchText) {
-          searchText = searchText.toLowerCase();
-          setState(() {
-            _usersDisplay = _users.where((u) {
-              var fName = u.name.toLowerCase();
-              var job = u.phone.toLowerCase();
-              return fName.contains(searchText) ||
-                  job.contains(searchText);
-            }).toList();
-          });
-        },
-        // controller: _textController,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Search',
-          suffixIcon: Icon(Icons.search),
+    return Column(
+      children: [
+        SizedBox(
+          height: 60,
+          child: Center(
+            child: Text('Inglab Assessment',
+                style: TextStyle(
+                    color: Color.fromRGBO(142, 142, 147, 1.0),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500)),
+          ),
         ),
-      ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+          child: TextField(
+            autofocus: false,
+            onChanged: (searchText) {
+              searchText = searchText.toLowerCase();
+              setState(() {
+                _usersDisplay = _users.where((u) {
+                  var fName = u.name.toLowerCase();
+                  var job = u.phone.toLowerCase();
+                  return fName.contains(searchText) || job.contains(searchText);
+                }).toList();
+              });
+            },
+            // controller: _textController,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Search',
+              suffixIcon: Icon(Icons.search),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

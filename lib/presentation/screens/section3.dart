@@ -1,3 +1,5 @@
+import 'package:assesment/presentation/screens/section2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:assesment/data/data_model.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,10 +22,26 @@ class UserDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        flexibleSpace: Container(
+          decoration:
+          BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("img/background.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: GestureDetector(
+          child: Icon(Icons.arrow_back_ios),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        // CupertinoIcons
         title: Text(user.name),
-        foregroundColor: Colors.grey,
+        foregroundColor: Color.fromRGBO(85, 85, 85, 1.0),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -41,7 +59,7 @@ class UserDetailsPage extends StatelessWidget {
             Center(
               child: Container(
                 // Profile picture's border frame
-                color: Color.fromRGBO(229, 220, 234, 1.0),
+                color: Color.fromRGBO(229, 229, 234, 1.0),
                 height: 120,
                 width: 120,
                 padding: EdgeInsets.all(2),
@@ -60,7 +78,7 @@ class UserDetailsPage extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 border: Border.all(
@@ -89,7 +107,7 @@ class UserDetailsPage extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 border: Border.all(
@@ -122,13 +140,16 @@ class UserDetailsPage extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 child: Material(
                   shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.grey, width: 1),
+                    side: const BorderSide(
+                        color: Color.fromRGBO(229, 229, 234, 1.0), width: 2),
                   ),
                   color: Colors.white,
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Descriptions",
+                      hintStyle:
+                      TextStyle(color: Color.fromRGBO(189, 189, 194, 1.0)),
                       contentPadding: EdgeInsets.all(10.0),
                     ),
                     keyboardType: TextInputType.multiline,

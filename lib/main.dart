@@ -39,25 +39,26 @@ class _loginState extends State<login> {
                   Builder(
                     builder: (context) => SafeArea(
                         child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              height: 60,
-                            ),
-                            Image.asset(
-                              'img/app_logo.png',
-                              height: 150,
-                              width: 150,
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Text('Inglab Assessment',
-                                style: TextStyle(
-                                    color: Color.fromRGBO(142, 142, 147, 1.0),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 22)),
-                          ],
-                        )),
+                      children: <Widget>[
+                        SizedBox(
+                          height: 60,
+                        ),
+                        Image.asset(
+                          'img/app_logo.png',
+                          height: 150,
+                          width: 150,
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Text('Inglab Assessment',
+                            style: TextStyle(
+                                color: Color.fromRGBO(142, 142, 147, 1.0),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 22)
+                        ),
+                      ],
+                    )),
                   ),
                   //username
                   Padding(
@@ -67,7 +68,7 @@ class _loginState extends State<login> {
                       child: TextField(
                         decoration: InputDecoration(
                           prefixIcon: ImageIcon(AssetImage("img/icon_user.png"),
-                          color: Color.fromRGBO(174, 174, 178, 1.0)),
+                              color: Color.fromRGBO(174, 174, 178, 1.0)),
                           border: OutlineInputBorder(),
                           labelText: 'Username',
                           labelStyle: TextStyle(
@@ -117,9 +118,10 @@ class _loginState extends State<login> {
                   height: 52,
                   width: double.infinity,
                   child: TextButton(
-                    style: TextButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       backgroundColor: Color.fromRGBO(48, 176, 199, 1.0),
+                      side: BorderSide(width: 2.0, color: Colors.grey),
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -127,11 +129,13 @@ class _loginState extends State<login> {
                         MaterialPageRoute(builder: (context) => Section2()),
                       );
                     },
-                    child: Text('LOGIN',
+                    child:
+                    Text('LOGIN',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 18)),
+                            fontSize: 18),
+                    ),
                   ),
                 ),
               ),
@@ -142,6 +146,3 @@ class _loginState extends State<login> {
     );
   }
 }
-
-
-

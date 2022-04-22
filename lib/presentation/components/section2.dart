@@ -14,8 +14,10 @@ class UserTile extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 1.0, color: Colors.grey),
-            right: BorderSide(width: 1.0, color: Colors.grey),
+            left: BorderSide(
+                width: 2.0, color: Color.fromRGBO(229, 229, 234, 1.0)),
+            right: BorderSide(
+                width: 2.0, color: Color.fromRGBO(229, 229, 234, 1.0)),
           ),
           color: Colors.white,
         ),
@@ -26,22 +28,24 @@ class UserTile extends StatelessWidget {
                 tag: user.id,
                 child: Image.network(
                   user.image,
-                  height: 100,
-                  width: 100,
+                  height: 60,
+                  width: 60,
                 ),
               ),
-              title: Text(
-                  user.name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  )
+              title: SizedBox(
+                width: 50,
+                child: Text(user.name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    )),
               ),
-              subtitle: Text(
-                  user.phone,
-                  style: TextStyle(
-                    fontSize: 17,
-                  )
+              subtitle: SizedBox(
+                width: 50,
+                child: Text(user.phone,
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
               ),
               onTap: () {
                 Navigator.push(
@@ -51,12 +55,14 @@ class UserTile extends StatelessWidget {
               },
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0,),
+              padding: EdgeInsets.symmetric(
+                horizontal: 15.0,
+              ),
               child: Divider(
                 thickness: 2.0,
+                color: Color.fromRGBO(229, 229, 234, 1.0),
               ),
             ),
-
           ],
         ),
       ),
